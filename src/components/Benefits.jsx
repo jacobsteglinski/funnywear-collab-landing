@@ -34,7 +34,7 @@ export default function Benefits() {
                 y: -6,
                 transition: { duration: 0.3, ease: [0.34, 1.56, 0.64, 1] },
               }}
-              className="bg-white border border-black/5 rounded-lg-2 p-7 shadow-soft-sm cursor-default transition-shadow duration-500 hover:shadow-soft-lg hover:border-brand-orange/20"
+              className="bg-white border border-black/5 rounded-lg-2 p-7 shadow-soft-sm cursor-default transition-[box-shadow,border-color] duration-500 hover:shadow-soft-lg hover:border-brand-orange/20"
             >
               <div
                 className={`w-12 h-12 rounded-sm-2 bg-gradient-to-br ${b.iconGradient} flex items-center justify-center text-2xl mb-5 ${

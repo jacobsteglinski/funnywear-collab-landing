@@ -13,7 +13,7 @@ function FAQItem({ q, a }) {
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -2, transition: { duration: 0.25, ease: [0.34, 1.56, 0.64, 1] } }}
       onClick={() => setOpen(!open)}
-      className="bg-white border border-black/5 rounded-md-2 p-5 cursor-pointer mb-3 shadow-soft-sm hover:shadow-soft-md hover:border-brand-orange/15 select-none"
+      className="bg-white border border-black/5 rounded-md-2 p-5 cursor-pointer mb-3 shadow-soft-sm transition-[box-shadow,border-color] duration-300 hover:shadow-soft-md hover:border-brand-orange/15 select-none"
     >
       <div className="flex items-center justify-between gap-4">
         <span className="font-semibold text-brand-black text-[15px]">{q}</span>
