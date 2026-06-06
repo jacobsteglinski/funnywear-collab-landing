@@ -1,6 +1,20 @@
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 export default function FormSection() {
+  useEffect(() => {
+    const w = 'https://tally.so/widgets/embed.js'
+    if (document.querySelector(`script[src="${w}"]`)) {
+      if (typeof window.Tally !== 'undefined') window.Tally.loadEmbeds()
+      return
+    }
+    const s = document.createElement('script')
+    s.src = w
+    s.onload = () => window.Tally?.loadEmbeds()
+    s.onerror = () => window.Tally?.loadEmbeds()
+    document.body.appendChild(s)
+  }, [])
+
   return (
     <section className="py-12 md:py-20 px-6">
       <motion.div
@@ -30,14 +44,17 @@ export default function FormSection() {
             Wypełnij formularz, odezwiemy się w ciągu kilku dni.
           </p>
 
-          {/* ============================================ */}
-          {/* TUTAJ WKLEJ EMBED FORMULARZA (Tally/GHL/etc) */}
-          {/* ============================================ */}
-          <div
-            id="form-embed"
-            className="min-h-[360px] bg-brand-cream/50 border-[1.5px] border-dashed border-black/10 rounded-md-2 flex items-center justify-center text-gray-500 text-sm p-6 text-center"
-          >
-            [ Miejsce na embed formularza ]
+          <div id="form-embed">
+            <iframe
+              data-tally-src="https://tally.so/embed/ODE0EA?alignLeft=1&hideTitle=1&dynamicHeight=1"
+              loading="lazy"
+              width="100%"
+              height="839"
+              frameBorder="0"
+              marginHeight="0"
+              marginWidth="0"
+              title="BARTER FUNNYWEAR"
+            />
           </div>
         </div>
       </motion.div>
