@@ -44,7 +44,7 @@ export default function FormSection() {
             Wypełnij formularz, odezwiemy się w ciągu kilku dni.
           </p>
 
-          <div id="form-embed">
+          <div id="form-embed" className="rounded-lg-2 overflow-hidden">
             <iframe
               data-tally-src="https://tally.so/embed/ODE0EA?alignLeft=1&hideTitle=1&dynamicHeight=1"
               loading="lazy"
